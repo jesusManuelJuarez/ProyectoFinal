@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+</head>
+<body background="https://images.unsplash.com/photo-1542876974-aa06c4f5c6c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjIyMjh9&auto=format&fit=crop&w=562&q=80">
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+        <div class="border border-dark"  style="width: 300px; height: 500px; text-align: center;">
+            <br>
+            
+            <img src="https://images.unsplash.com/photo-1578104033152-58c33c7e3cd2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" style = "width: 100px;"  alt="" class="rounded-circle">
+            <br>
+            <br>
+            <form action="" method="POST">
+                {%csrf_token%}
+                <div class="form-group">
+                    <label for="email1">Correo</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required name = "user">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required name = "password">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+                </div>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesion
+                    </button>
+                    <br>
+                    <br>
+            
+                
+                    {% if error %}
+                    <div class = "alert alert-warning" role="alert">
+                        {%if error %}
+                            {{error}}
+                        {% endif%}
+                    </div>
+                    {% endif%}
+                    <span>
+                    </span>
+                    
+            </form>
+            <a href= "{% url 'Registro:Registro'%}">Registrate</a>
+        </div>  
+    </center>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
